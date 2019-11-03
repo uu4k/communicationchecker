@@ -3,3 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  form(action="/", method="get")
+    input(type="url", name="url", value=url, maxlength="255", style="width: 300px;")
+    input(type="submit", value="check")
+
+  if result
+    p #{result.status}
+    p #{result.statusText}
+    p #{headers}
+    p #{data}
