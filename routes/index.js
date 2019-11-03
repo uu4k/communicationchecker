@@ -8,6 +8,8 @@ router.get("/", function(req, res, next) {
   if (check_url) {
     axios.get(check_url).then((result) => {
       res.render("index", { title: "Communication Checker", url: check_url, result: result });
+    }).catch((error) => {
+      res.render("index", { title: "Communication Checker", url: check_url, error: true, result: error.response || {} });
     });
   } else {
     res.render("index", { title: "Communication Checker" });

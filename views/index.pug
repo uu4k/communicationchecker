@@ -9,7 +9,9 @@ block content
     input(type="submit", value="check")
 
   if result
+    if error
+      p ERROR!!!!
     p #{result.status}
     p #{result.statusText}
-    p #{headers}
-    p #{data}
+    //- p #{result.headers}
+    //- p #{result.data}
